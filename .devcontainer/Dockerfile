@@ -18,6 +18,7 @@ ARG USER_GID=$USER_UID
 
 # Configure apt and install packages
 RUN apt-get update \
+    && apt-get install -y gnupg2 \
     && apt-get -y install --no-install-recommends apt-utils dialog 2>&1 \
     # 
     # Verify git, process tools, lsb-release (useful for CLI installs) installed
